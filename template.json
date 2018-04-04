@@ -2,52 +2,26 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "credentials_0365_username": {
-      "defaultValue": null,
-      "type": "string"
-    },
-    "credentials_0365_password": {
-      "defaultValue": null,
-      "type": "securestring"
-    },
     "automationName": {
-      "defaultValue": null,
-      "type": "string"
-    },
-    "omsName": {
       "defaultValue": null,
       "type": "string"
     }
   },
   "variables": {
-    "AutomationName": "[parameters('automationName')]",
-    "OmsName": "[parameters('omsName')]"
+    "AutomationName": "[parameters('automationName')]"
   },
   "resources": [
     {
       "type": "Microsoft.Automation/automationAccounts",
       "name": "[variables('AutomationName')]",
       "apiVersion": "2015-10-31",
-      "location": "westeurope",
+      "location": "[resourceGroup().location]",
       "properties": {
         "sku": {
           "name": "Basic"
         }
       },
       "dependsOn": []
-    },
-    {
-      "type": "Microsoft.Automation/automationAccounts/credentials",
-      "name": "[concat(variables('AutomationName'), '/Office365Admin')]",
-      "apiVersion": "2015-10-31",
-      "properties": {
-        "userName": "[parameters('credentials_0365_username')]",
-        "password": "[parameters('credentials_0365_password')]",
-        "description": ""
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Automation/automationAccounts', variables('AutomationName'))]"
-      ]
     },
     {
       "type": "Microsoft.Automation/automationAccounts/modules",
@@ -61,17 +35,6 @@
       "dependsOn": [
         "[resourceId('Microsoft.Automation/automationAccounts', variables('AutomationName'))]"
       ]
-    },
-    {
-      "type": "Microsoft.OperationalInsights/workspaces",
-      "apiVersion": "2015-11-01-preview",
-      "name": "[variables('OmsName')]",
-      "location" : "[resourceGroup().location]",
-      "properties": {
-        "sku": {
-          "Name": "Standard"
-        }
-      }
     }
   ]
 }
