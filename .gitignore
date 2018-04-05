@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/frontend/bin/Debug/netcoreapp2.0
+/frontend/obj
+/frontend/frontend.csproj.user
+/frontend/.vs
+/frontend/.vscode
