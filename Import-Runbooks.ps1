@@ -30,14 +30,14 @@ $Webhook1 = New-AzureRmAutomationWebhook `
  -Force `
  -RunOn $HybridWorkerGroup 
 
- $Webhook3 = New-AzureRmAutomationWebhook `
- -Name "set-companysettings" `
- -IsEnabled $true `
-  -ExpiryTime "10/2/2019" `
-  -RunbookName "set-companysettings" `
-  -ResourceGroup $ResourceGroupName `
-  -AutomationAccountName $AutomationName `
-  -Force
+$Webhook3 = New-AzureRmAutomationWebhook `
+  -Name "parse-webhook" `
+  -IsEnabled $true `
+   -ExpiryTime "10/2/2019" `
+   -RunbookName "parse-webhook" `
+   -ResourceGroup $ResourceGroupName `
+   -AutomationAccountName $AutomationName `
+   -Force
 
 Write-Host ''
 Write-Host 'Copy web hook urls. For security reasons they are not retrievable after this moment.'
@@ -50,5 +50,5 @@ write-host "Web hook for user creation (cloud)"
 write-host $Webhook1.WebhookURI
 
 Write-Host ''
-write-host "Web hook for company settings (cloud)"
+write-host "Web hook for configuration settings"
 write-host $Webhook3.WebhookURI
