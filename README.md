@@ -1,6 +1,7 @@
 # Automation Script
 
-This document describes the workings and expected outcomes of the `automation.ps1` and the `template.json`.
+This document describes the workings and expected outcomes of the `automation.ps1` and the `template.json`. For `automation.ps1` to be run, PowerShell must be started as an administrator. 
+Then the command `Set-ExecutionPolicy unrestricted` must be executed. 
 
 ## Script
 At the current moment the script and template are under active development, therefore one of the first things it does is clean-up using `Remove-AzureRmResourceGroup`
