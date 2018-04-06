@@ -1,0 +1,6 @@
+<Configuration>
+        <CompanySettings>
+                <SelfServicePasswordReset>true</SelfServicePasswordReset>
+        </CompanySettings>
+</Configuration>
+
