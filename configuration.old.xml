@@ -1,0 +1,18 @@
+<Configuration>
+        <CompanySettings>
+                <SelfServicePasswordReset>true</SelfServicePasswordReset>
+                <Skype>true</Skype>
+                <Email>true</Email>
+                <OneDrive>true</OneDrive>
+        </CompanySettings>
+        <DummySettings>
+                <DummyProp>5</DummyProp>
+                <DeletedProp>geen waarde</DeletedProp>
+        </DummySettings>
+        <SameSettings>
+                <Level1>
+                        <Level2>bla</Level2>
+                </Level1>
+        </SameSettings>
+</Configuration>
+
