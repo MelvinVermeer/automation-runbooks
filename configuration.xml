@@ -1,7 +1,5 @@
 <Configuration>
-        <CompanySettings>
-                <SelfServicePasswordReset>true</SelfServicePasswordReset>
-                <UsersPermissionToCreateGroupsEnabled>true</UsersPermissionToCreateGroupsEnabled>
-        </CompanySettings>
+        <SelfServicePasswordReset>true</SelfServicePasswordReset>
+        <UsersPermissionToCreateGroupsEnabled>true</UsersPermissionToCreateGroupsEnabled>
 </Configuration>
 
